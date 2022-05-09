@@ -2,10 +2,11 @@ import cv2
 
 CAM_WIDTH = 1280
 CAM_HEIGHT = 720
-face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
 cap.set(3, CAM_WIDTH)
 cap.set(4, CAM_HEIGHT)
+
+face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 def mosaic(img, rect, size):
     (x1, y1, x2, y2) = rect
@@ -32,4 +33,3 @@ else:
     print('Fail to open')
 cv2.destroyAllWindows()
 cap.release()
-
