@@ -13,7 +13,7 @@ def mosaic(img, rect, size):
 
 CAM_WIDTH = 1920
 CAM_HEIGHT = 1080
-face_detector = cv2.CascadeClassifier('face.xml')
+face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 capture = cv2.VideoCapture(0)
 capture.set(3, CAM_WIDTH)
 capture.set(4, CAM_HEIGHT)
