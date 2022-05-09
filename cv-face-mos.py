@@ -1,5 +1,12 @@
 import cv2
 
+CAM_WIDTH = 1280
+CAM_HEIGHT = 720
+face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+cap = cv2.VideoCapture(0)
+cap.set(3, CAM_WIDTH)
+cap.set(4, CAM_HEIGHT)
+
 def mosaic(img, rect, size):
     (x1, y1, x2, y2) = rect
     w = x2 - x1
@@ -11,26 +18,18 @@ def mosaic(img, rect, size):
     img2[y1:y2, x1:x2] = i_mos
     return img2
 
-CAM_WIDTH = 1920
-CAM_HEIGHT = 1080
-face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-capture = cv2.VideoCapture(0)
-capture.set(3, CAM_WIDTH)
-capture.set(4, CAM_HEIGHT)
-
-while capture.isOpened():
-    success, img = capture.read()
+while cap.isOpened():
+    success, img = cap.read()
     if success:
         faces = face_detector.detectMultiScale(img, scaleFactor=1.2, minNeighbors=5, minSize=(50,50))
     for (x,y,w,h) in faces:
-        img = mosaic(img, (x,y, x+w, y+h), 20)
+        img = mosaic(img, (x,y, x+w, y+h), 10)
         cv2.rectangle(img,(x,y), (x+w,y+h), (0,255,0),2)
-        cv2.putText(img,"face",(x,y-5),cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,255,255), 1)
-
-    cv2.imshow('Frame1',img)
+    cv2.imshow('demo',img)
     if cv2.waitKey(1) == ord('q') or cv2.waitKey(1) == 27:
-        cv2.destroyAllWindows()
-        capture.release()
         break
 else:
     print('Fail to open')
+cv2.destroyAllWindows()
+cap.release()
+
