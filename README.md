@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/61585411/167336213-74f00f1f-ccda-4c37-acd0-18e2dc4c9a87.jpg" width=800>
 
 ## Procedures
-1. Import the libraries that we are going to use in this project.
+1. Import the library.
 2. Setting up a webcam.
 3. Creating face detector
 4. Defining a mosaic function to pixelate the detected face region
