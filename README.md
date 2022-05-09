@@ -66,6 +66,6 @@ cv2.destroyAllWindows()
 cap.release()
 ```
 ## References
-- [Blur and anonymize faces with OpenCV and Python](https://pyimagesearch.com/2020/04/06/blur-and-anonymize-faces-with-opencv-and-python/)
-- [Blur and anonymize faces with OpenCV and Python](https://www.geeksforgeeks.org/blur-and-anonymize-faces-with-opencv-and-python/)
+- [Blur and anonymize faces with OpenCV and Python (Pyimagesearch)](https://pyimagesearch.com/2020/04/06/blur-and-anonymize-faces-with-opencv-and-python/)
+- [Blur and anonymize faces with OpenCV and Python (Geeksforgeeks)](https://www.geeksforgeeks.org/blur-and-anonymize-faces-with-opencv-and-python/)
 
