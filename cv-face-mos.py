@@ -2,7 +2,8 @@ import cv2
 
 CAM_WIDTH = 1280
 CAM_HEIGHT = 720
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture()
+cap.open(0. cv2.CAP_DSHOW)
 cap.set(3, CAM_WIDTH)
 cap.set(4, CAM_HEIGHT)
 
